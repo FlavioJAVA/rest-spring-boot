@@ -40,7 +40,7 @@ public class CalculadoraController {
         } else if(Double.parseDouble(numero2) == 0){
             throw new OperacaoNaoSuportadaException("Favor informar um número divisor diferente de zero");
         }
-        return Double.parseDouble(numero1) + Double.parseDouble(numero2);
+        return Double.parseDouble(numero1) / Double.parseDouble(numero2);
     }
 
     @RequestMapping(value = "/calculamedia/{numero1}/{numero2}", method = RequestMethod.GET)
