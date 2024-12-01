@@ -4,10 +4,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.BAD_REQUEST)
-public class OperacaoNaoSuportadaException extends RuntimeException{
+public class FalhaNaOperacaoException extends RuntimeException{
     private static final long serialVersionUID = 1L;
 
-    public OperacaoNaoSuportadaException(String message) {
+    public FalhaNaOperacaoException(String message) {
         super(message);
     }
 }

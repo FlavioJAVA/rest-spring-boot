@@ -1,12 +1,12 @@
 package br.com.rest.aplication.rest_spring_boot.exceptions;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
-@Getter
+@Data
 public class ExceptionResponse implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -14,10 +14,12 @@ public class ExceptionResponse implements Serializable {
     private Date timestamp;
     private String message;
     private String details;
+    private List<String> links;
 
-    public ExceptionResponse(Date timestamp, String message, String details) {
+    public ExceptionResponse(Date timestamp, String message, String details, List<String> links) {
         this.timestamp = timestamp;
         this.message = message;
         this.details = details;
+        this.links = links;
     }
 }
