@@ -32,14 +32,8 @@ public class MyResponseEntityExceptionHandler extends ResponseEntityExceptionHan
 
     @ExceptionHandler(OperacaoInvalidaException.class)
     public ResponseEntity<ExceptionResponse> handleOperacaoInvalida(OperacaoInvalidaException ex, HttpServletRequest request) {
-        String requestDetails = request.getRequestURI(); // Ou request.getRequestURL().toString();
-        ExceptionResponse response = new ExceptionResponse(
-                new Date(),
-                ex.getMessage(),
-                requestDetails,
-                ex.getLinks()
-        );
-
+        String requestDetails = request.getRequestURI();
+        ExceptionResponse response = new ExceptionResponse(new Date(), ex.getMessage(), requestDetails, ex.getLinks());
         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
     }
 

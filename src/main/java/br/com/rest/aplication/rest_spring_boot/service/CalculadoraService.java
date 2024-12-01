@@ -49,11 +49,9 @@ public class CalculadoraService {
     private List<String> criarLinksPossiveis(String baseLink) {
         List<String> links = new ArrayList<>();
 
-        // Loop sobre o índice das operações definidas no enum
         for (int i = 1; i <= TipoOperacao.values().length; i++) {
-            // Monta a nova URL substituindo a operação pelo índice da iteração
             String link = baseLink.replaceAll("/[0-9]+$", "/" + i);
-            links.add(link); // Adiciona o link à lista
+            links.add(link);
         }
 
         return links;
